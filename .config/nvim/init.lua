@@ -15,6 +15,7 @@ require "user.mdpreview"
 require "user.trouble"
 require "user.lualine"
 require "user.bufferline"
+require "user.harpoon"
 
 if vim.g.IDE then
   print("Opened in IDE mode")

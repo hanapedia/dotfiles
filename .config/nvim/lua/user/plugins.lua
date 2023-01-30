@@ -58,6 +58,9 @@ return packer.startup(function(use)
     branch = 'v2', -- optional but strongly recommended
   }
 
+  -- harpoon
+  use "ThePrimeagen/harpoon"
+
   -- colorschemes
   use "shaunsingh/nord.nvim" -- nord colorscheme with treesitter support
   use "EdenEast/nightfox.nvim" -- nordfox colorscheme and some more
