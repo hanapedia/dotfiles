@@ -1,4 +1,4 @@
-local M = {}
+M = {}
 
 -- TODO: backfill this to template
 M.setup = function()
@@ -90,6 +90,10 @@ M.on_attach = function(client, bufnr)
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+end
+
+M.on_attach_no_highlight = function(client, bufnr)
+  lsp_keymaps(bufnr)
 end
 
 --[[ local capabilities = vim.lsp.protocol.make_client_capabilities() ]]
