@@ -4,17 +4,16 @@ if not null_ls_status_ok then
 end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-local formatting = null_ls.builtins.format { async = true }
+--[[ local formatting = null_ls.builtins.format { async = true } ]]
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 -- local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.stylua,
-    -- formatting.prettier.with { extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },
-    -- formatting.black.with { extra_args = { "--fast" } },
-    -- formatting.yapf,
-    -- diagnostics.flake8,
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.diagnostics.sqlfluff.with({
+            extra_args = { "--dialect", "postgres" }, -- change to your dialect
+    }),
   },
 }

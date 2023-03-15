@@ -7,3 +7,4 @@ end
 require("user.lsp.handlers").setup()
 require("user.lsp.mason")
 require("user.lsp.lspconfigs")
+--[[ require("user.lsp.null-ls") ]]
