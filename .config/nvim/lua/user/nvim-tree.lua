@@ -3,12 +3,29 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
+local function open_nvim_tree(data)
+
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+
+  -- create a new, empty buffer
+  vim.cmd.enew()
+
+  -- wipe the directory buffer
+  vim.cmd.bw(data.buf)
+
+  -- change to the directory
+  vim.cmd.cd(data.file)
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 local keymaps = { -- BEGIN_DEFAULT_MAPPINGS
   { key = "l", action = "edit" },
@@ -64,12 +81,6 @@ local keymaps = { -- BEGIN_DEFAULT_MAPPINGS
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = true,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -111,13 +122,13 @@ nvim_tree.setup {
     number = false,
     relativenumber = false,
     float = {
-      enable = false,
+      enable = true,
       quit_on_focus_loss = true,
       open_win_config = {
         relative = "editor",
-        border = "rounded",
-        width = 50,
-        height = 30,
+        border = "double",
+        width = vim.api.nvim_win_get_width(0),
+        height = vim.api.nvim_win_get_height(0),
         row = 0.5,
         col = 0.5,
       },
