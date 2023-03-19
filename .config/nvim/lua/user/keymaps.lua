@@ -8,14 +8,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -78,15 +70,3 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 -- MarkdownPreview
 keymap("n", "<leader>md", ":MarkdownPreview<cr>", opts)
 
---[[ -- zk ]]
---[[ local zk_opts = { noremap = true, silent = false } ]]
---[[ -- Open notes. ]]
---[[ keymap("n", "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", zk_opts) ]]
---[[ -- Open notes associated with the selected tags. ]]
---[[ keymap("n", "<leader>zt", "<Cmd>ZkTags<CR>", zk_opts) ]]
---[[]]
---[[ -- Search for the notes matching a given query. ]]
---[[ keymap("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<CR>" ]]
---[[   , zk_opts) ]]
---[[ -- Search for the notes matching the current visual selection. ]]
---[[ keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", zk_opts) ]]
