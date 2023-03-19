@@ -3,6 +3,14 @@ if not status_ok then
   return
 end
 
+-- Shorten function name
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+keymap("n", "<leader>f",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
 -- telescope.load_extension('media_files')
 
 local actions = require "telescope.actions"

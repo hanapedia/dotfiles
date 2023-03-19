@@ -1,3 +1,7 @@
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+keymap("n", "<leader>md", ":MarkdownPreview<cr>", opts)
+
 local config = vim.g
 -- default: 0
 config.mkdp_auto_start = 0
