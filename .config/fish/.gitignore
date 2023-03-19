@@ -4,4 +4,5 @@ functions/*.fish
 fish_variables
 fish_plugins
 
-!functions/user_functions_*.fish
+!functions/user_functions.fish
+!functions/user_functions_alias.fish

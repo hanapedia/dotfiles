@@ -29,6 +29,9 @@ end
 user_functions 
 user_functions_alias
 
+# load secrets
+secrets
+
 # default editor
 set -gx EDITOR "nvim"
 
