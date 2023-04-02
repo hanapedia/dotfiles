@@ -6,10 +6,9 @@ end
 -- Shorten function name
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
-keymap("n", "<leader>f",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+local builtin = require("telescope.builtin")
+keymap("n", "<leader>f", builtin.find_files, opts)
+keymap("n", "<c-t>", builtin.live_grep, opts)
 
 -- telescope.load_extension('media_files')
 
@@ -21,6 +20,12 @@ telescope.setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+    layout_strategy = "vertical",
+    layout_config = {
+      width = vim.api.nvim_win_get_width(0),
+      height = vim.api.nvim_win_get_height(0),
+      prompt_position = "bottom",
+    },
 
     mappings = {
       i = {
@@ -56,6 +61,7 @@ telescope.setup {
 
       n = {
         ["<esc>"] = actions.close,
+        ["q"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
@@ -77,8 +83,8 @@ telescope.setup {
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["u"] = actions.preview_scrolling_up,
+        ["d"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
