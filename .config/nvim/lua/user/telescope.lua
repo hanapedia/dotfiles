@@ -9,6 +9,19 @@ local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 keymap("n", "<leader>f", builtin.find_files, opts)
 keymap("n", "<c-t>", builtin.live_grep, opts)
+keymap("n", "<leader>:", builtin.commands, opts)
+keymap("n", "<leader>m", builtin.marks, opts)
+keymap("n", "<leader>?", builtin.keymaps, opts)
+
+-- lsp keymaps
+keymap("n", "gd", builtin.lsp_definitions, opts)
+keymap("n", "gi", builtin.lsp_implementations, opts)
+keymap("n", "gr", builtin.lsp_references, opts)
+keymap("n", "gl", builtin.diagnostics, opts)
+
+-- git
+keymap("n", "<leader>gs", builtin.git_status, opts)
+keymap("n", "<leader>gcl", builtin.git_commits, opts)
 
 -- telescope.load_extension('media_files')
 
