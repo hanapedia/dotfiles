@@ -20,7 +20,7 @@ keymap("n", "gr", builtin.lsp_references, opts)
 keymap("n", "gl", builtin.diagnostics, opts)
 
 -- git
-keymap("n", "<leader>gs", builtin.git_status, opts)
+keymap("n", "<leader>gst", builtin.git_status, opts)
 keymap("n", "<leader>gcl", builtin.git_commits, opts)
 
 -- telescope.load_extension('media_files')

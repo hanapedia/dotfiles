@@ -45,4 +45,43 @@ gitsigns.setup {
   yadm = {
     enable = false,
   },
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or { noremap = true, silent = true }
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', '<leader>gj', function()
+      if vim.wo.diff then return '<leader>gj' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    map('n', '<leader>gk', function()
+      if vim.wo.diff then return '<leader>gk' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    -- Actions
+    map('n', '<leader>gh', gs.preview_hunk)
+    map('n', '<leader>gt', gs.toggle_current_line_blame)
+    map('n', '<leader>gd', gs.diffthis)
+    map('n', '<leader>gl', function() gs.blame_line{full=true} end)
+
+    map({'n', 'v'}, '<leader>gsh', ':Gitsigns stage_hunk<CR>')
+    map({'n', 'v'}, '<leader>grh', ':Gitsigns reset_hunk<CR>')
+    map('n', '<leader>gsb', gs.stage_buffer)
+    map('n', '<leader>gsu', gs.undo_stage_hunk)
+    map('n', '<leader>grb', gs.reset_buffer)
+    map('n', '<leader>gD', function() gs.diffthis('~') end)
+    map('n', '<leader>td', gs.toggle_deleted)
+
+    -- Text object
+    --[[ map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>') ]]
+  end
 }
