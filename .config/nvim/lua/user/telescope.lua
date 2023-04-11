@@ -8,7 +8,7 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 keymap("n", "<leader>f", builtin.find_files, opts)
-keymap("n", "<leader>j", builtin.buffers, opts)
+keymap("n", "<leader>b", builtin.buffers, opts)
 keymap("n", "<c-t>", builtin.live_grep, opts)
 keymap("n", "<leader>:", builtin.commands, opts)
 keymap("n", "<leader>m", builtin.marks, opts)

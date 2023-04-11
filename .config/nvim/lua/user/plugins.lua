@@ -118,7 +118,7 @@ return packer.startup(function(use)
   -- UIs 
   use "nvim-lualine/lualine.nvim" -- lualine
   use "kyazdani42/nvim-tree.lua" -- nvim tree
-  -- use "akinsho/bufferline.nvim" -- bufferline
+  use "akinsho/bufferline.nvim" -- bufferline
 
   -- Toggleterm
   -- use "akinsho/toggleterm.nvim"

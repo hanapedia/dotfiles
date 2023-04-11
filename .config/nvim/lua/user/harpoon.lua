@@ -31,10 +31,10 @@ harpoon.setup({
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-keymap("n", "<leader>k", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>n", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
 keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-keymap("n", "L", "<cmd>lua require('harpoon.ui').nav_next()<CR>", opts)
-keymap("n", "H", "<cmd>lua require('harpoon.ui').nav_next()<CR>", opts)
+keymap("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_next()<CR>", opts)
+keymap("n", "<leader>k", "<cmd>lua require('harpoon.ui').nav_next()<CR>", opts)
 
 keymap("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts)
