@@ -14,7 +14,6 @@ require "user.hop"
 require "user.mdpreview"
 require "user.trouble"
 require "user.lualine"
-require "user.bufferline"
 require "user.harpoon"
 require "user.chatgpt"
 
@@ -24,7 +23,7 @@ if vim.g.IDE then
   require "user.ide-keymaps"
 end
 
+-- require "user.bufferline"
 -- require "user.toggleterm"
 -- require "user.filetype"
 -- require "user.zk"
---[[ require "user.leap" ]]
