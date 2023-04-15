@@ -16,6 +16,9 @@ fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/.cargo/bin
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 
+# brew diable auto-update
+set -gx HOMEBREW_NO_AUTO_UPDATE "1"
+
 # Language version managers
 pyenv init - | source
 set -gx nvm_default_version v19.3.0
