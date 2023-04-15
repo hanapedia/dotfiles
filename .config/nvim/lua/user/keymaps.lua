@@ -37,7 +37,7 @@ keymap("n", "<leader>c", ":Bdelete<CR>", opts)
 keymap("n", "<leader>s", ":Format<CR>", opts)
 
 -- Highlight
-keymap("n", "<leader>h", ":noh<CR>", opts)
+keymap("n", "<leader>H", ":noh<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
