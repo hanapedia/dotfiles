@@ -16,7 +16,7 @@ require "user.trouble"
 require "user.lualine"
 require "user.bufferline"
 require "user.harpoon"
-require "user.chatgpt"
+-- require "user.chatgpt"
 
 if vim.g.IDE then
   print("Opened in IDE mode")

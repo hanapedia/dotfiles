@@ -16,3 +16,7 @@ end
 function lg
   lazygit
 end
+
+function kc --wraps kubectl
+  kubectl $argv
+end
