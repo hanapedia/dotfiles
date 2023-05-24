@@ -27,9 +27,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- remap unknown key
-keymap("n", "J", "", opts)
-
 -- Write, Quit, Closes
 keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<leader>Q", ":q!<CR>", opts)
@@ -63,3 +60,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<leader>jk", "<ESC>", opts)
+
+-- unmap key
+keymap("n", "J", "", opts)
+keymap("n", "(", "", opts)
+keymap("n", ")", "", opts)
+
