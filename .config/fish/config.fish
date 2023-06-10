@@ -14,17 +14,17 @@ end
 # Path
 fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/.cargo/bin
-source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+# source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 
 # brew diable auto-update
 set -gx HOMEBREW_NO_AUTO_UPDATE "1"
 
 # kubectl cluster contexts
-set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/eks"
+set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/kind"
 
 
 # Language version managers
-pyenv init - | source
+# pyenv init - | source
 set -gx nvm_default_version v19.3.0
 
 # keybindings
@@ -63,7 +63,7 @@ set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
 
 # wasmedge
-bass source $HOME/.wasmedge/env
+# bass source $HOME/.wasmedge/env
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
