@@ -49,8 +49,6 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons" -- icons used by many plugins
   use "moll/vim-bbye" -- plugin for closing all the buffers
-  --[[ use "ggandor/leap.nvim" -- better navigation, like sneak ]]
-  -- use "glepnir/dashboard-nvim" -- dashboard
 
   -- hop
   use {
@@ -59,12 +57,9 @@ return packer.startup(function(use)
   }
 
   -- harpoon
-  use "ThePrimeagen/harpoon"
+  --[[ use "ThePrimeagen/harpoon" ]]
 
   -- colorschemes
-  use "shaunsingh/nord.nvim" -- nord colorscheme with treesitter support
-  use "EdenEast/nightfox.nvim" -- nordfox colorscheme and some more
-  --[[ use "rmehri01/onenord.nvim" -- onenord colorscheme ]]
   use "hanapedia/mynord.nvim" -- fork of onenord
 
   -- Completions
@@ -86,7 +81,6 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- linting and formatting
   use "nvim-lua/lsp-status.nvim" -- for showing status on lualine
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
   -- trouble
   use {
@@ -119,31 +113,6 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim" -- lualine
   use "kyazdani42/nvim-tree.lua" -- nvim tree
   use "akinsho/bufferline.nvim" -- bufferline
-
-  -- Toggleterm
-  -- use "akinsho/toggleterm.nvim"
-  -- install without yarn or npm
-  -- use({
-  --     "iamcco/markdown-preview.nvim",
-  --     run = function() vim.fn["mkdp#util#install"]() end,
-  -- })
-
-  -- Notetaking and Markdown
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-  --[[ use "mickael-menu/zk-nvim" -- nvim plugin for zk ]]
-
-  -- Latex
-  use 'lervag/vimtex'
-
-  -- chatgpt
-  use({
-    "jackMort/ChatGPT.nvim",
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-})
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
