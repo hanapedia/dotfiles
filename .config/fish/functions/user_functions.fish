@@ -32,3 +32,17 @@ function conf
   end
 end
 
+function load_env
+    if test -n "$argv[1]" -a -f "$argv[1]"
+        while read -l line
+            set key (echo $line | awk -F= '{print $1}')
+            set value (echo $line | awk -F= '{for (i=2; i<=NF; i++) printf $i (i==NF ? "" : "=")}')
+            if test -n "$key" -a -n "$value"
+                set -xg $key $value
+            end
+        end < $argv[1]
+        echo "Environment variables loaded from $argv[1]."
+    else
+        echo "Please provide a valid .env file as an argument."
+    end
+end

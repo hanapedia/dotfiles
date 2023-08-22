@@ -88,6 +88,12 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
   end
+  if client.name == "ansiblels" then
+    client.server_capabilities.semanticTokensProvider = nil
+  end
+  if client.name == "terraformls" then
+    client.server_capabilities.semanticTokensProvider = nil
+  end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
