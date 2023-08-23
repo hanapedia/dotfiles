@@ -62,8 +62,6 @@ set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
 ## config git alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
 
-# wasmedge
-bass source $HOME/.wasmedge/env
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
