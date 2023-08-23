@@ -12,7 +12,14 @@ if status is-interactive
 end
 
 # Path
-fish_add_path /opt/homebrew/bin
+
+if test (uname -m) = "arm64"
+  eval (/opt/homebrew/bin/brew shellenv)
+  set -x PATH /opt/homebrew/bin:$PATH
+else
+  eval (/usr/local/bin/brew shellenv)
+end
+
 fish_add_path $HOME/.cargo/bin
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 
