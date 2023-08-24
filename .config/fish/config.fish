@@ -32,8 +32,7 @@ set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HO
 
 # Language version managers
 pyenv init - | source
-set -gx nvm_default_version v19.3.0
-
+set -gx nvm_default_version v19.9.0
 # keybindings
 function fish_user_key_bindings
   bind \cg __ghq_repository_search
