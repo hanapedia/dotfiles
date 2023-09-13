@@ -16,7 +16,7 @@ end
 if test (uname -m) = "arm64"
   eval (/opt/homebrew/bin/brew shellenv)
   set -x PATH /opt/homebrew/bin:$PATH
-else
+else if test -e /usr/local/bin/brew
   eval (/usr/local/bin/brew shellenv)
 end
 
