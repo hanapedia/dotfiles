@@ -26,8 +26,9 @@ fish_add_path $HOME/.cargo/bin
 set -gx HOMEBREW_NO_AUTO_UPDATE "1"
 
 # kubectl cluster contexts
-# set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/eks"
+set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/eks"
 
+set --universal nvm_default_version latest
 
 # load aliases
 user_functions 
@@ -38,3 +39,7 @@ set -gx EDITOR "nvim"
 
 ## config git alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
