@@ -13,6 +13,7 @@ keymap("n", "<c-t>", builtin.live_grep, opts)
 keymap("n", "<leader>:", builtin.commands, opts)
 keymap("n", "<leader>m", builtin.marks, opts)
 keymap("n", "<leader>?", builtin.keymaps, opts)
+keymap("n", "<leader>t", builtin.resume, opts)
 
 -- lsp keymaps
 keymap("n", "gd", builtin.lsp_definitions, opts)

@@ -17,6 +17,22 @@ function lg
   lazygit
 end
 
-function kc --wraps kubectl
+function k --wraps kubectl
   kubectl $argv
+end
+
+function g --wraps git
+  git $argv
+end
+
+function n --wraps nvim
+  nvim $argv
+end
+
+function rc
+  nvim ~/.config/fish/
+end
+
+function o
+  open -a "Google Chrome" $argv
 end

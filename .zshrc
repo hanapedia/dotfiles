@@ -1,4 +1,7 @@
 # session configs
+#
+autoload -Uz compinit
+compinit
 
 # setup homebrew
 #
@@ -30,8 +33,13 @@ bindkey '^f' autosuggest-accept
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 # variables
+#
 export TERM=xterm-256color
 export LC_CTYPE=en_US.UTF-8
+
+# completions
+#
+source <(kubectl completion zsh)
 
 # zplug
 #

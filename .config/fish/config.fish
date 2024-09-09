@@ -15,18 +15,15 @@ end
 
 if test (uname -m) = "arm64"
   eval (/opt/homebrew/bin/brew shellenv)
-  set -x PATH /opt/homebrew/bin:$PATH
 else if test -e /usr/local/bin/brew
   eval (/usr/local/bin/brew shellenv)
 end
-
-fish_add_path $HOME/.cargo/bin
 
 # brew diable auto-update
 set -gx HOMEBREW_NO_AUTO_UPDATE "1"
 
 # kubectl cluster contexts
-set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/eks"
+set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/labver2"
 
 set --universal nvm_default_version latest
 
@@ -42,4 +39,3 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
