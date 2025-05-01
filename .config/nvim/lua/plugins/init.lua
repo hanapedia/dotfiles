@@ -52,14 +52,14 @@ return {
   { "rafamadriz/friendly-snippets" },
 
   -- LSP and related
-  { "neovim/nvim-lspconfig", config = function() require("user.lsp") end },
   {
-    "williamboman/mason.nvim",
+    "neovim/nvim-lspconfig",
     dependencies = {
+      "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      require("user.lsp.mason")  -- this file will set up both mason and mason-lspconfig
+      require("user.lsp")  -- no need to call user.lsp.mason separately
     end,
   },
   { "nvim-lua/lsp-status.nvim" },

@@ -5,6 +5,16 @@ end
 
 -- require("user.lsp.lsp-installer")
 require("user.lsp.handlers").setup()
-require("user.lsp.mason")
 require("user.lsp.lspconfigs")
---[[ require("user.lsp.null-ls") ]]
+
+require("mason").setup {
+  ui = {
+    icons = {
+      package_installed = "✓"
+    }
+  }
+}
+
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls" },
+}
