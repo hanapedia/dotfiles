@@ -44,3 +44,7 @@ end
 function h
   /Users/hirokihanada/code/src/github.com/hanapedia/hexagon/bin/hexctl $argv
 end
+
+function config
+    git --git-dir=$HOME/.cfg/.git --work-tree=$HOME $argv
+end

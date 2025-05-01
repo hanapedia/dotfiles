@@ -34,8 +34,5 @@ user_functions_alias
 # default editor
 set -gx EDITOR "nvim"
 
-## config git alias
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
-
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
