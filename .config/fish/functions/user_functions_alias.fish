@@ -36,3 +36,11 @@ end
 function o
   open -a "Google Chrome" $argv
 end
+
+function hexctl
+  /Users/hirokihanada/code/src/github.com/hanapedia/hexagon/bin/hexctl $argv
+end
+
+function h
+  /Users/hirokihanada/code/src/github.com/hanapedia/hexagon/bin/hexctl $argv
+end
