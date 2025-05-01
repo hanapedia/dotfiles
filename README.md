@@ -2,7 +2,7 @@
 For installation on new machine, run:
 ```sh
 echo ".cfg" >> .gitignore
-git clone --bare https://github.com/hanapedia/dotfiles.git $HOME/.cfg
+git clone --bare git@github.com:hanapedia/dotfiles.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config config --local status.showUntrackedFiles no
 config checkout
@@ -11,7 +11,7 @@ config checkout
 On new machines consider using `minimal` branch.
 ```sh
 echo ".cfg" >> .gitignore
-git clone --bare -b minimal https://github.com/hanapedia/dotfiles.git $HOME/.cfg
+git clone --bare -b minimal git@github.com:hanapedia/dotfiles.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config config --local status.showUntrackedFiles no
 config checkout
