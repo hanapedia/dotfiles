@@ -46,5 +46,5 @@ function h
 end
 
 function config
-    git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
+    git --git-dir=$HOME/.cfg/.git --work-tree=$HOME $argv
 end

@@ -23,3 +23,4 @@ config checkout
 - Configuration for fish (`.config/fish`)
     - [fisher](https://github.com/jorgebucaran/fisher) must be installed for package management.
 - Configuration for tmux
+    - [tpm](https://github.com/tmux-plugins/tpm) must be installe for plugin management.
