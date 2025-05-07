@@ -35,32 +35,24 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-  })
-
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-  })
 end
 
-local function lsp_highlight_document(client)
-  -- Set autocommands conditional on server_capabilities
-  -- Server capabilities spec:
-  -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#serverCapabilities
+local function lsp_highlight_document(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
-    vim.api.nvim_clear_autocmds { group = "lsp_document_highlight" }
+    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
+    vim.api.nvim_clear_autocmds { group = "lsp_document_highlight", buffer = bufnr }
+
     vim.api.nvim_create_autocmd("CursorHold", {
-      callback = vim.lsp.buf.document_highlight,
-      --[[ buffer = bufnr, ]]
+      buffer = bufnr,
       group = "lsp_document_highlight",
+      callback = vim.lsp.buf.document_highlight,
       desc = "Document Highlight",
     })
+
     vim.api.nvim_create_autocmd("CursorMoved", {
-      callback = vim.lsp.buf.clear_references,
-      --[[ buffer = bufnr, ]]
+      buffer = bufnr,
       group = "lsp_document_highlight",
+      callback = vim.lsp.buf.clear_references,
       desc = "Clear All the References",
     })
   end
@@ -95,10 +87,10 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
   end
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
+  lsp_highlight_document(client, bufnr)
 end
 
-M.on_attach_no_highlight = function(client, bufnr)
+M.on_attach_no_highlight = function(_, bufnr)
   lsp_keymaps(bufnr)
 end
 
