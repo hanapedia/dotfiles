@@ -18,3 +18,4 @@
     ac = "!f(){ git add . && git commit -m $1 ; }; f"
 	bs = branch --sort=committerdate
 	tree = log --graph --pretty=oneline --abbrev-commit --all
+    pom = pull origin main
