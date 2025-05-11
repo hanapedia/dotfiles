@@ -36,3 +36,7 @@ set -gx EDITOR "nvim"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/hanapedia/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

@@ -20,5 +20,13 @@ require "user.options"
 require "user.keymaps"
 require "user.ide-keymaps"
 
--- Setup lazy.nvim
-require("lazy").setup("plugins")
+-- Setup lazy.nvim with profiling enabled
+require("lazy").setup({
+  spec = {
+    import = "plugins", -- your plugin directory
+  },
+  profiling = {
+    loader = true,   -- profile plugin loading
+    require = true,  -- profile `require()` calls
+  },
+})

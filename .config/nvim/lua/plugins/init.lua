@@ -1,7 +1,7 @@
 return {
   -- Core dependencies
-  { "nvim-lua/popup.nvim" },
-  { "nvim-lua/plenary.nvim" },
+  { "nvim-lua/popup.nvim", lazy = false },
+  { "nvim-lua/plenary.nvim", lazy = false },
 
   -- Self-management (optional, no longer needed with lazy.nvim)
   -- { "folke/lazy.nvim", import = "lazy" },
@@ -110,6 +110,7 @@ return {
   },
   {
     "kyazdani42/nvim-tree.lua",
+    lazy = false, -- load this before UI as directory is opened most of the time
     config = function()
       require("user.nvim-tree")
     end,
