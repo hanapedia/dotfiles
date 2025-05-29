@@ -1,6 +1,7 @@
 [user]
-	name = Hiroki
-	email = hiroki11hanada@gmail.com
+	name = Hiroki Hanada
+	email = hiroki-hanada@cybozu.co.jp
+	signingkey = /Users/hanapedia/.ssh/id_ed25519.pub
 [init]
 	defaultBranch = main
 [color]
@@ -19,3 +20,5 @@
 	bs = branch --sort=committerdate
 	tree = log --graph --pretty=oneline --abbrev-commit --all
     pom = pull origin main
+[gpg]
+	format = ssh

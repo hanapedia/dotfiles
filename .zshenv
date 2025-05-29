@@ -8,3 +8,4 @@ export KUBECONFIG="$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOM
 
 # homebrew update
 export HOMEBREW_NO_AUTO_UPDATE="1"
+. "$HOME/.cargo/env"
