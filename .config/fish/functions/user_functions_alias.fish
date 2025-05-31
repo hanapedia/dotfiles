@@ -48,3 +48,7 @@ end
 function config
     git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
 end
+
+function gcd
+    cd (ghq list --full-path | fzf)
+end

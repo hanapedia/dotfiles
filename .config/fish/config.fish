@@ -19,6 +19,14 @@ else if test -e /usr/local/bin/brew
   eval (/usr/local/bin/brew shellenv)
 end
 
+# set default config file location
+set -Ux XDG_CONFIG_HOME ~/.config
+
+# enable vi key bindings
+fish_vi_key_bindings --no-erase
+# re-enable fzf accept-autosuggestion binding in vi mode
+bind -M insert \cf accept-autosuggestion
+
 # brew diable auto-update
 set -gx HOMEBREW_NO_AUTO_UPDATE "1"
 

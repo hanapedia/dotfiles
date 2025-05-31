@@ -9,7 +9,7 @@ function sshhome
   ssh HomeWan
 end
 
-function restart --wraps=exec\ \'/opt/homebrew/bin/fish\' --description alias\ restart=exec\ \'/opt/homebrew/bin/fish\'
+function r --wraps=exec\ \'/opt/homebrew/bin/fish\' --description alias\ restart=exec\ \'/opt/homebrew/bin/fish\'
   set -l fish_path (which fish)
   exec $fish_path $argv; 
 end
