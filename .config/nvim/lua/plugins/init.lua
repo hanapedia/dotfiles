@@ -144,4 +144,13 @@ return {
       vim.g.copilot_enabled = false -- disables completion
     end,
   },
+  --[[ { ]]
+  --[[   "k8s_schema_picker", ]]
+  --[[   dir = "~/.config/nvim/lua/k8s_schema_picker/", -- local path ]]
+  --[[   dependencies = { "nvim-telescope/telescope.nvim" }, ]]
+  --[[   config = function() ]]
+  --[[     vim.keymap.set("n", "<leader>ks", require("k8s_schema_picker").select_schema, ]]
+  --[[       { desc = "Select Kubernetes YAML Schema" }) ]]
+  --[[   end ]]
+  --[[ }, ]]
 }
