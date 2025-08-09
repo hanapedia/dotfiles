@@ -18,22 +18,6 @@ function grips --wraps='grip summery.md --export summery.html' --description 'al
   grip summery.md --export summery.html $argv; 
 end
 
-function conf
-  set -l nvim_path (which nvim)
-  switch $argv[1]
-  case n nvim
-    exec $nvim_path ~/.config/nvim
-  case f fish
-    exec $nvim_path ~/.config/fish
-  case fc fishconf
-    exec $nvim_path ~/.config/fish/config.fish
-  case nc nixconf
-    exec $nvim_path ~/code/src/github.com/hanapedia/nixos-config/
-  case '*'
-    echo Enter valid argument. n, f, or fc
-  end
-end
-
 function load_env
     if test -n "$argv[1]" -a -f "$argv[1]"
         while read -l line
