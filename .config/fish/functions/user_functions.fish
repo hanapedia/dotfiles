@@ -27,6 +27,8 @@ function conf
     exec $nvim_path ~/.config/fish
   case fc fishconf
     exec $nvim_path ~/.config/fish/config.fish
+  case nc nixconf
+    exec $nvim_path ~/code/src/github.com/hanapedia/nixos-config/
   case '*'
     echo Enter valid argument. n, f, or fc
   end
