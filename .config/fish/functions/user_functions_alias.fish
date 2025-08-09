@@ -9,6 +9,10 @@ function repo
   cd ~/code/src/github.com/hanapedia/;
 end
 
+function nixconf
+  cd ~/code/src/github.com/hanapedia/nixos-config;
+end
+
 function vivi
   cd ~/code/src/github.com/vivianeinc/;
 end
