@@ -12,6 +12,7 @@ if status is-interactive
 end
 
 # Path
+fish_add_path /usr/local/go/bin
 
 if test (uname -m) = "arm64"
   eval (/opt/homebrew/bin/brew shellenv)
@@ -41,10 +42,3 @@ user_functions_alias
 
 # default editor
 set -gx EDITOR "nvim"
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/hanapedia/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

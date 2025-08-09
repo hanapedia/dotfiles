@@ -7,7 +7,7 @@
 [color]
 	ui = auto
 [ghq]
-	root = ~/code/src/github.com/hanapedia
+	root = ~/code/src/github.com/
 [pull]
 	rebase = true
 [alias]
