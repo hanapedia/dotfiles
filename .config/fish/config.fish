@@ -40,11 +40,6 @@ user_functions_alias
 
 # default editor
 set -gx EDITOR "nvim"
-<<<<<<< Updated upstream
-=======
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 set --export --prepend PATH "/Users/hanapedia/.rd/bin"
@@ -52,4 +47,3 @@ set --export --prepend PATH "/Users/hanapedia/.rd/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hanapedia/google-cloud-sdk/path.fish.inc' ]; . '/Users/hanapedia/google-cloud-sdk/path.fish.inc'; end
->>>>>>> Stashed changes
