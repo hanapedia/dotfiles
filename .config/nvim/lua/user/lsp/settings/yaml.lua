@@ -1,7 +1,6 @@
 local on_attach = require("user.lsp.handlers").on_attach_no_highlight
 local capabilities = require("user.lsp.handlers").capabilities
 local schemas = {
-  kubernetes = "*.yaml",
   ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
   ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
   ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
@@ -16,21 +15,19 @@ local schemas = {
   "*docker-compose*.{yml,yaml}",
   ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
   ["https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/schema-cloud-config-v1.json"] = "*cloud_init.{yaml,yml}",
+  kubernetes = "*.yaml",
 }
 
-require("lspconfig").yamlls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    yaml = {
-      format = {
-        singleQuote = true,
-      },
-      schemas = schemas,
-      schemaStore = {
-        enable = false,
-        url = '',
-      },
-    }
-  }
-}
+--[[ require("lspconfig").yamlls.setup { ]]
+--[[   on_attach   = on_attach, ]]
+--[[   capabilities= capabilities, ]]
+--[[   -- disable automatic filetype-based attach: ]]
+--[[   filetypes   = {}, ]]
+--[[   settings    = { ]]
+--[[     yaml = { ]]
+--[[       format = { singleQuote = true }, ]]
+--[[       schemas = schemas, ]]
+--[[       schemaStore = { enable = false, url = "" }, ]]
+--[[     }, ]]
+--[[   }, ]]
+--[[ } ]]
