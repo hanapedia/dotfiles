@@ -34,11 +34,22 @@ set -gx HOMEBREW_NO_AUTO_UPDATE "1"
 # kubectl cluster contexts
 set -gx KUBECONFIG "$HOME/.kube/configs/default:$HOME/.kube/configs/minikube:$HOME/.kube/configs/home:$HOME/.kube/configs/lab:$HOME/.kube/configs/labver2"
 
-set --universal nvm_default_version latest
-
 # load aliases
 user_functions 
 user_functions_alias
 
 # default editor
 set -gx EDITOR "nvim"
+<<<<<<< Updated upstream
+=======
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/hanapedia/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hanapedia/google-cloud-sdk/path.fish.inc' ]; . '/Users/hanapedia/google-cloud-sdk/path.fish.inc'; end
+>>>>>>> Stashed changes
