@@ -5,9 +5,23 @@ M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- 2. Minimal on_attach
 function M.on_attach(client, bufnr)
-  -- Disable formatting where you have a dedicated formatter
-  if client.name == "tsserver" then
-    client.server_capabilities.documentFormattingProvider = false
+  if client.server_capabilities.documentHighlightProvider then
+    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
+    vim.api.nvim_clear_autocmds { group = "lsp_document_highlight", buffer = bufnr }
+
+    vim.api.nvim_create_autocmd("CursorHold", {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      callback = vim.lsp.buf.document_highlight,
+      desc = "Document Highlight",
+    })
+
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      callback = vim.lsp.buf.clear_references,
+      desc = "Clear All the References",
+    })
   end
 
   local map = function(mode, lhs, rhs)
@@ -25,9 +39,42 @@ function M.on_attach(client, bufnr)
   map("n", "gk", function()
     vim.diagnostic.goto_prev({ border = "rounded" })
   end)
-  map("n", "gk", function()
+  map("n", "gj", function()
     vim.diagnostic.goto_next({ border = "rounded" })
   end)
 end
+
+local signs = {
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn",  text = "" },
+  { name = "DiagnosticSignInfo",  text = "" },
+  { name = "DiagnosticSignHint",  text = "" },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
+
+local config = {
+  -- disable virtual text
+  virtual_text = true,
+  -- show signs
+  signs = {
+    active = signs,
+  },
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
+}
+
+vim.diagnostic.config(config)
 
 return M

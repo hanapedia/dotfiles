@@ -21,9 +21,9 @@ require("ts_context_commentstring").setup {
 vim.g.skip_ts_context_commentstring_module = true
 
 -- Folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false -- Disable folding by default
+--[[ vim.opt.foldmethod = "expr" ]]
+--[[ vim.opt.foldexpr = "nvim_treesitter#foldexpr()" ]]
+--[[ vim.opt.foldenable = false -- Disable folding by default ]]
 
 require 'treesitter-context'.setup {
   enable = true,         -- Enable this plugin (Can be enabled/disabled later via commands)
