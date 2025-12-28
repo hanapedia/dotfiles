@@ -1,12 +1,18 @@
-local settings = "user.lsp.settings."
--- Setup installed language servers
-require(settings .. "lua")
-require(settings .. "ansible")
-require(settings .. "rust")
-require(settings .. "go")
-require(settings .. "yaml")
-require(settings .. "texlab")
-require(settings .. "c")
-require(settings .. "python")
-require(settings .. "ecmascript")
-require(settings .. "terraform")
+local lsp = require("user.lsp.handlers")
+
+vim.lsp.config("gopls", {
+  on_attach = lsp.on_attach,
+  capabilities = lsp.capabilities,
+})
+
+vim.lsp.config("clangd", {
+  on_attach = lsp.on_attach,
+  capabilities = lsp.capabilities,
+})
+
+vim.lsp.config("lua_ls", {
+  on_attach = lsp.on_attach,
+  capabilities = lsp.capabilities,
+})
+
+vim.lsp.enable({ "gopls", "clangd", "lua_ls" })

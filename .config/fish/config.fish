@@ -41,9 +41,9 @@ user_functions_alias
 # default editor
 set -gx EDITOR "nvim"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/hanapedia/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+set -x BAT_THEME "Nord"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hanapedia/google-cloud-sdk/path.fish.inc' ]; . '/Users/hanapedia/google-cloud-sdk/path.fish.inc'; end
+# field selector for LoadBalancer Services
+set -x LB --field-selector=spec.type=LoadBalancer
+# custom pod/node output
+set -x CCNP custom-columns=NODE:.spec.nodeName,POD:.metadata.name,IP:.status.podIP
