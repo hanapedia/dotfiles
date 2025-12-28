@@ -41,6 +41,8 @@ user_functions_alias
 # default editor
 set -gx EDITOR "nvim"
 
+set -x BAT_THEME "Nord"
+
 # field selector for LoadBalancer Services
 set -x LB --field-selector=spec.type=LoadBalancer
 # custom pod/node output
