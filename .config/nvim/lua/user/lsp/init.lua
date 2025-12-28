@@ -3,23 +3,15 @@ if not status_ok then
 	return
 end
 
--- require("user.lsp.lsp-installer")
-require("user.lsp.handlers").setup()
+require("user.lsp.handlers")
 require("user.lsp.lspconfigs")
-
-require("mason").setup {
-  ui = {
-    icons = {
-      package_installed = "✓"
-    }
-  }
-}
-
+require("mason").setup()
 require("mason-lspconfig").setup {
   automatic_enable = {
       exclude = {
           "gopls",
-          "yamlls",
+          "clangd",
+          "lua_ls",
       }
   }
 }
