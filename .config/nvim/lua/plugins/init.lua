@@ -43,12 +43,12 @@ return {
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-cmdline" },
-  { "saadparwaiz1/cmp_luasnip" },
+  --[[ { "saadparwaiz1/cmp_luasnip" }, ]]
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-nvim-lua" },
 
   -- Snippets
-  { "L3MON4D3/LuaSnip" },
+  --[[ { "L3MON4D3/LuaSnip" }, ]]
   { "rafamadriz/friendly-snippets" },
 
   -- LSP and related
@@ -120,29 +120,6 @@ return {
       require("user.bufferline")
     end,
   },
-  --[[ { ]]
-  --[[   "olimorris/codecompanion.nvim", ]]
-  --[[   opts = {}, ]]
-  --[[   dependencies = { ]]
-  --[[     "nvim-lua/plenary.nvim", ]]
-  --[[     "nvim-treesitter/nvim-treesitter", ]]
-  --[[     "ravitemer/mcphub.nvim", ]]
-  --[[   }, ]]
-  --[[   config = function() ]]
-  --[[     require("user.codecompanion") ]]
-  --[[   end, ]]
-  --[[ }, ]]
-  --[[ { ]]
-  --[[   "github/copilot.vim", ]]
-  --[[   cmd = "Copilot", ]]
-  --[[   init = function() ]]
-  --[[     -- Disable all built-in mappings and features of copilot.vim ]]
-  --[[     vim.g.copilot_no_tab_map = true ]]
-  --[[     vim.g.copilot_assume_mapped = true ]]
-  --[[     vim.g.copilot_tab_fallback = "" ]]
-  --[[     vim.g.copilot_enabled = false -- disables completion ]]
-  --[[   end, ]]
-  --[[ }, ]]
   --[[ { ]]
   --[[   "k8s_schema_picker", ]]
   --[[   dir = "~/.config/nvim/lua/k8s_schema_picker/", -- local path ]]
