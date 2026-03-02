@@ -13,6 +13,9 @@ end
 
 # Path
 fish_add_path /usr/local/go/bin
+fish_add_path ~/.local/bin
+set -Ux GOPATH ~/go
+fish_add_path $GOPATH/bin
 
 if test (uname -m) = "arm64"
   eval (/opt/homebrew/bin/brew shellenv)

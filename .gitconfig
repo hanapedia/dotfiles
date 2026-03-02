@@ -20,6 +20,7 @@
 	bs = branch --sort=committerdate
 	tree = log --graph --pretty=oneline --abbrev-commit --all
     pom = pull origin main
+    rebases = rebase -i --exec 'git commit --amend -S --no-edit'
 [gpg]
 	format = ssh
 [credential "https://github.com"]
