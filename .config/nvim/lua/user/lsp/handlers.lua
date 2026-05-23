@@ -29,8 +29,8 @@ function M.on_attach(client, bufnr)
   end
 
   map("n", "K", vim.lsp.buf.hover)
-  map("n", "gd", vim.lsp.buf.definition)
-  map("n", "gr", vim.lsp.buf.references)
+  --[[ map("n", "gd", vim.lsp.buf.definition) ]]
+  --[[ map("n", "gr", vim.lsp.buf.references) ]]
   map("n", "<leader>rn", vim.lsp.buf.rename)
   map("n", "<C-k>", vim.lsp.buf.signature_help)
   map("n", "<leader>s", function()
